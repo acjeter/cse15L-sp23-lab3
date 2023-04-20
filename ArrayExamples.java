@@ -27,16 +27,22 @@ public class ArrayExamples {
   static double averageWithoutLowest(double[] arr) {
     if(arr.length < 2) { return 0.0; }
     double lowest = arr[0];
-    for(double num: arr) {
-      if(num < lowest) { lowest = num; }
+    int low = 0;
+    for(int i = 0; i < arr.length; i++) {
+      if(arr[i] < lowest) { 
+        low = i; 
+      }
     }
-    double sum = 0;
-    for(double num: arr) {
-      if(num != lowest) { sum += num; }
+    double sum = 0.0;
+    int count = 0;
+    for(int i = 0; i < arr.length; i++) {
+      if(i != low) { 
+        sum += arr[i];
+        count += 1; 
+      }
     }
-    return sum / (arr.length - 1);
+    return sum / count;
   }
-
-
+  
 }
 
