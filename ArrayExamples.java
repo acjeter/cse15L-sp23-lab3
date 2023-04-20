@@ -43,6 +43,6 @@ public class ArrayExamples {
     }
     return sum / count;
   }
-  
+
 }
 
